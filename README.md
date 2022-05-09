@@ -7,3 +7,4 @@
 - Khenan Terry
 
 ## ERD
+![ERD Diagram](https://raw.githubusercontent.com/murryf/PotlukkBackEnd/main/Project2dbERDscreenshot.png)
