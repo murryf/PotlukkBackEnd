@@ -1,17 +1,53 @@
 package dev.nexus.entities;
 
+import javax.persistence.*;
+
+@Entity
+@Table(name = "item")
 public class item {
+    @Id
+    @GeneratedValue(strategy = GenerationType.IDENTITY)
+    @Column(name = "id")
+    private Long id;
+
+    @Column(name = "item_name")
+    private String itemName;
+    @Column(name = "description")
     private String description;
+    @Column(name = "status")
     private String status;
+    @Column(name="supplier")
     private String supplier;
+    @Column(name="potluck_id")
+    private Long potluckID;
 
     private item() {
     }
 
-    public item(String description, String status, String supplier) {
+    public item(Long id, String itemName, String description,
+                String status, String supplier, Long potluckID) {
+        this.id = id;
+        this.itemName = itemName;
         this.description = description;
         this.status = status;
         this.supplier = supplier;
+        this.potluckID = potluckID;
+    }
+
+    public Long getId() {
+        return id;
+    }
+
+    public void setId(Long id) {
+        this.id = id;
+    }
+
+    public String getItemName() {
+        return itemName;
+    }
+
+    public void setItemName(String itemName) {
+        this.itemName = itemName;
     }
 
     public String getDescription() {
@@ -38,12 +74,23 @@ public class item {
         this.supplier = supplier;
     }
 
+    public Long getPotluckID() {
+        return potluckID;
+    }
+
+    public void setPotluckID(Long potluckID) {
+        this.potluckID = potluckID;
+    }
+
     @Override
     public String toString() {
         return "item{" +
-                "description='" + description + '\'' +
+                "id=" + id +
+                ", itemName='" + itemName + '\'' +
+                ", description='" + description + '\'' +
                 ", status='" + status + '\'' +
                 ", supplier='" + supplier + '\'' +
+                ", potluckID=" + potluckID +
                 '}';
     }
 }
