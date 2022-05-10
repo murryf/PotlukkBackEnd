@@ -6,6 +6,7 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Component;
 import org.springframework.stereotype.Service;
 
+import java.util.ArrayList;
 import java.util.List;
 import java.util.Optional;
 
@@ -27,6 +28,19 @@ public class PotluckServiceImpl implements PotluckService{
     public List<Potluck> getAllPotlucks() {
         return this.potluckRepo.findAll();
     }
+
+//    @Override
+//    public List<Potluck> getPotlucksByCreator(int creatorId) {
+//        List<Potluck> allPotlucks = this.potluckRepo.findAll();
+//        List<Potluck> filteredPotlucks = new ArrayList<>();
+//        for(int i=0; i< allPotlucks.size(); i++) {
+//
+//            if(allPotlucks.get(i).getCreator() == creatorId){
+//               filteredPotlucks.add(allPotlucks.get(i));
+//            }
+//        }
+//        return filteredPotlucks;
+//    }
 
     @Override
     public Potluck getPotluckById(int id) {
