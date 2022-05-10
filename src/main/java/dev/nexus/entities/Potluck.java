@@ -8,7 +8,7 @@ import lombok.ToString;
 import javax.persistence.*;
 
 @Entity
-@Table(name = "potluck")
+@Table(name = "potlucks")
 @NoArgsConstructor
 @AllArgsConstructor
 @ToString
@@ -26,7 +26,7 @@ public class Potluck {
     private double potluckDate;
 
     @Column(name = "creator_id")
-    private int creatorId;
+    private int  creator;
 
 
 
