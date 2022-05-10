@@ -8,7 +8,7 @@
 		<version>2.6.7</version>
 		<relativePath/> <!-- lookup parent from repository -->
 	</parent>
-	<groupId>dev.ranieri</groupId>
+	<groupId>dev.nexus</groupId>
 	<artifactId>SuggestionBoxSpring</artifactId>
 	<version>0.0.1-SNAPSHOT</version>
 	<name>SuggestionBoxSpring</name>
