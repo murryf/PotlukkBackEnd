@@ -1,10 +1,17 @@
 package dev.nexus.entities;
 
 
+import lombok.AllArgsConstructor;
+import lombok.NoArgsConstructor;
+import lombok.ToString;
+
 import javax.persistence.*;
 
 @Entity
 @Table(name = "potluck")
+@NoArgsConstructor
+@AllArgsConstructor
+@ToString
 public class potluck {
 
     @Id
@@ -21,57 +28,6 @@ public class potluck {
     @Column(name = "creator_id")
     private int creatorId;
 
-    public potluck() {
-    }
-
-    public potluck(int id, String potluckName, double potluckDate, int creatorId) {
-        this.id = id;
-        this.potluckName = potluckName;
-        this.potluckDate = potluckDate;
-        this.creatorId = creatorId;
-    }
-
-    public int getId() {
-        return id;
-    }
-
-    public void setId(int id) {
-        this.id = id;
-    }
-
-    public String getPotluckName() {
-        return potluckName;
-    }
-
-    public void setPotluckName(String potluckName) {
-        this.potluckName = potluckName;
-    }
-
-    public double getPotluckDate() {
-        return potluckDate;
-    }
-
-    public void setPotluckDate(double potluckDate) {
-        this.potluckDate = potluckDate;
-    }
-
-    public int getCreatorId() {
-        return creatorId;
-    }
-
-    public void setCreatorId(int creatorId) {
-        this.creatorId = creatorId;
-    }
-
-    @Override
-    public String toString() {
-        return "potluck{" +
-                "id=" + id +
-                ", potluckName='" + potluckName + '\'' +
-                ", potluckDate=" + potluckDate +
-                ", creatorId=" + creatorId +
-                '}';
-    }
 
 
 }
