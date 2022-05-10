@@ -1,18 +1,36 @@
 package dev.nexus.entities;
 
-public class user {
+import lombok.AllArgsConstructor;
+import lombok.NoArgsConstructor;
+import lombok.ToString;
+import javax.persistence.*;
+
+@Entity
+@Table(name = "users")
+@NoArgsConstructor
+@AllArgsConstructor
+@ToString
+public class User {
+    @Id
+    @GeneratedValue(strategy = GenerationType.IDENTITY)
+    @Column(name = "id")
+    private int id;
+
+    @Column(name = "user_id")
     private int userID;
+    @Column(name = "user_username")
     private String userName;
+    @Column(name = "user_password")
     private String password;
 
-    private user(){
 
+
+    public int getId() {
+        return id;
     }
 
-    public user(int userID, String userName, String password) {
-        this.userID = userID;
-        this.userName = userName;
-        this.password = password;
+    public void setId(int id) {
+        this.id = id;
     }
 
     public int getUserID() {
@@ -39,12 +57,4 @@ public class user {
         this.password = password;
     }
 
-    @Override
-    public String toString() {
-        return "user{" +
-                "userID=" + userID +
-                ", userName='" + userName + '\'' +
-                ", password='" + password + '\'' +
-                '}';
-    }
 }
