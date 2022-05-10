@@ -1,9 +1,16 @@
 package dev.nexus.entities;
 
+import lombok.AllArgsConstructor;
+import lombok.NoArgsConstructor;
+import lombok.ToString;
+
 import javax.persistence.*;
 
 @Entity
 @Table(name = "items")
+@NoArgsConstructor
+@AllArgsConstructor
+@ToString
 public class Item {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
@@ -20,19 +27,6 @@ public class Item {
     private String supplier;
     @Column(name="potluck_id")
     private Long potluckID;
-
-    public Item() {
-    }
-
-    public Item(Long id, String itemName, String description,
-                String status, String supplier, Long potluckID) {
-        this.id = id;
-        this.itemName = itemName;
-        this.description = description;
-        this.status = status;
-        this.supplier = supplier;
-        this.potluckID = potluckID;
-    }
 
     public Long getId() {
         return id;
@@ -82,16 +76,5 @@ public class Item {
         this.potluckID = potluckID;
     }
 
-    @Override
-    public String toString() {
-        return "item{" +
-                "id=" + id +
-                ", itemName='" + itemName + '\'' +
-                ", description='" + description + '\'' +
-                ", status='" + status + '\'' +
-                ", supplier='" + supplier + '\'' +
-                ", potluckID=" + potluckID +
-                '}';
-    }
 }
 
