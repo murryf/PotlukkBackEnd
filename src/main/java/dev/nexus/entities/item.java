@@ -21,7 +21,7 @@ public class item {
     @Column(name="potluck_id")
     private Long potluckID;
 
-    private item() {
+    public item() {
     }
 
     public item(Long id, String itemName, String description,
