@@ -18,7 +18,7 @@ public class Item {
     private Long id;
 
     @Column(name = "item_name")
-    private String itemName;
+    private String name;
     @Column(name = "description")
     private String description;
     @Column(name = "status")
@@ -36,12 +36,12 @@ public class Item {
         this.id = id;
     }
 
-    public String getItemName() {
-        return itemName;
+    public String getName() {
+        return name;
     }
 
-    public void setItemName(String itemName) {
-        this.itemName = itemName;
+    public void setName(String name) {
+        this.name = name;
     }
 
     public String getDescription() {
