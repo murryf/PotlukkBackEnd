@@ -1,4 +1,4 @@
-package dev.nexus.repos;
+package dev.nexus.Repos;
 
 import dev.nexus.entities.Potluck;
 
@@ -12,5 +12,5 @@ import java.util.List;
 @Repository
 public interface PotluckRepo extends JpaRepository<Potluck, Integer> {
 
-    List<Potluck> findPotluckByCreator(String creator);
+    List<Potluck> findPotluckByCreator(int creator);
 }
