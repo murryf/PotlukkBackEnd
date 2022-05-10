@@ -12,7 +12,7 @@ import javax.persistence.*;
 @NoArgsConstructor
 @AllArgsConstructor
 @ToString
-public class potluck {
+public class Potluck {
 
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
