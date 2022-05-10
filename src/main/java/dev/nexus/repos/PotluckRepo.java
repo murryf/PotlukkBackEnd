@@ -1,15 +1,12 @@
 package dev.nexus.Repos;
 
 import dev.nexus.entities.Potluck;
-import org.springframework.stereotype.Component;
-import org.springframework.stereotype.Repository;
+
+import org.springframework.data.jpa.repository.JpaRepository;
 
 import java.util.List;
 
-@Component
-@Repository
-public interface PotluckRepo {
+public interface PotluckRepo extends JpaRepository<Potluck, Integer> {
 
-    List<Potluck> getPotluckByCreator(String creator);
-
+    List<Potluck> findPotluckByCreator(String creator);
 }
