@@ -8,11 +8,13 @@
         <sourceTestOutputDir name="target/generated-test-sources/test-annotations" />
         <outputRelativeToContentRoot value="true" />
         <module name="SuggestionBoxSpring" />
+        <module name="Potluckk" />
       </profile>
     </annotationProcessing>
   </component>
   <component name="JavacSettings">
     <option name="ADDITIONAL_OPTIONS_OVERRIDE">
+      <module name="Potluckk" options="-parameters" />
       <module name="SuggestionBoxSpring" options="-parameters" />
     </option>
   </component>
