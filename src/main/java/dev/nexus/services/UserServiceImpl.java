@@ -41,6 +41,7 @@ public class UserServiceImpl implements UserService {
 
     @Override
     public boolean deleteUser(int id) {
-        return false;
+        this.userRepo.deleteById(id);
+        return true;
     }
 }

@@ -37,6 +37,7 @@ public class ItemServicesImpl implements dev.nexus.services.ItemService {
     @Override
     public boolean deleteItem(Integer id) {
 
-        return false;
+        this.itemRepo.deleteById(id);
+        return true;
     }
 }
