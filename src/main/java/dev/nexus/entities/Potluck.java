@@ -28,7 +28,4 @@ public class Potluck {
     @Column(name = "creator_id")
     private int creator;
 
-    public void setPotluckDate(double potluckDate) {
-        this.potluckDate = potluckDate;
-    }
 }

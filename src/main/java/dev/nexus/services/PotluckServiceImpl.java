@@ -12,7 +12,7 @@ import java.util.Optional;
 
 @Component
 @Service
-public class PotluckServiceImpl implements dev.nexus.services.PotluckService {
+public class PotluckServiceImpl implements PotluckService {
 
     @Autowired
     private PotluckRepo potluckRepo;
@@ -47,7 +47,7 @@ public class PotluckServiceImpl implements dev.nexus.services.PotluckService {
     }
 
     @Override
-    public Potluck updatePotluckTime(int id, double date) {
+    public Potluck updatePotluckDate(int id, double date) {
         Potluck potluck = this.potluckRepo.getById(id);
         potluck.setPotluckDate(date);
         this.potluckRepo.save(potluck);
