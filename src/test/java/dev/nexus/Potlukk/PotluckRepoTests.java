@@ -1,7 +1,7 @@
 package dev.nexus.Potlukk;
 
 
-import dev.nexus.Repos.PotluckRepo;
+import dev.nexus.repos.PotluckRepo;
 import dev.nexus.entities.Potluck;
 import org.junit.jupiter.api.Assertions;
 import org.junit.jupiter.api.MethodOrderer;
