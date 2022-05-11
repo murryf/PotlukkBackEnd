@@ -1,4 +1,4 @@
-package dev.nexus.Services;
+package dev.nexus.services;
 
 import dev.nexus.Repos.PotluckRepo;
 import dev.nexus.entities.Potluck;
@@ -12,7 +12,7 @@ import java.util.Optional;
 
 @Component
 @Service
-public class PotluckServiceImpl implements PotluckService{
+public class PotluckServiceImpl implements dev.nexus.Services.PotluckService {
 
     @Autowired
     private PotluckRepo potluckRepo;
