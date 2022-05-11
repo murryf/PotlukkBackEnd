@@ -12,8 +12,8 @@ import org.springframework.web.bind.annotation.CrossOrigin;
 @CrossOrigin("*")
 public class ItemController {
 
-    @Autowired
-    private final ItemService itemService = new ItemServicesImpl();
+    //@Autowired
+    //private final ItemService itemService = new ItemServicesImpl();
 
 
 }

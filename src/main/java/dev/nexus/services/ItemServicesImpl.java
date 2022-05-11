@@ -11,7 +11,7 @@ import java.util.Optional;
 
 @Component
 @Service
-public class ItemServicesImpl implements ItemService{
+public class ItemServicesImpl implements dev.nexus.services.ItemService {
 
     @Autowired
     private ItemRepo itemRepo;

@@ -12,5 +12,5 @@ import java.util.List;
 @Repository
 public interface PotluckRepo extends JpaRepository<Potluck, Integer> {
 
-    List<Potluck> findPotluckByCreator(String creator);
+    List<Potluck> findPotluckByCreator(int creator);
 }
