@@ -1,7 +1,7 @@
-package dev.nexus.Potlukk;
+package dev.nexus.potlukk;
 
 
-import dev.nexus.Repos.PotluckRepo;
+import dev.nexus.repos.PotluckRepo;
 import dev.nexus.entities.Potluck;
 import org.junit.jupiter.api.Assertions;
 import org.junit.jupiter.api.MethodOrderer;
@@ -26,7 +26,7 @@ public class PotluckRepoTests {
     @Test
     @Order(1)
     public void createPotluck(){
-        Potluck potluck = new Potluck(0, "First Potluck", 24000, 1);
+        Potluck potluck = new Potluck(0, "Second Potluck", 24000, 1);
         potluckRepo.save(potluck);
         testPotluck = potluck;
         System.out.println(potluck);
