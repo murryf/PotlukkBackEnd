@@ -9,7 +9,7 @@ public interface PotluckService {
     Potluck createPotluck(Potluck potluck);
 
     List<Potluck> getAllPotlucks();
-//    List<Potluck> getPotlucksByCreator(int creatorId);
+    List<Potluck> getPotlucksByCreator(int creatorId);
     Potluck getPotluckById(int id);
 
     Potluck updatePotluckTime(int id, double date);

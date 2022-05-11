@@ -29,18 +29,12 @@ public class PotluckServiceImpl implements PotluckService{
         return this.potluckRepo.findAll();
     }
 
-//    @Override
-//    public List<Potluck> getPotlucksByCreator(int creatorId) {
-//        List<Potluck> allPotlucks = this.potluckRepo.findAll();
-//        List<Potluck> filteredPotlucks = new ArrayList<>();
-//        for(int i=0; i< allPotlucks.size(); i++) {
-//
-//            if(allPotlucks.get(i).getCreator() == creatorId){
-//               filteredPotlucks.add(allPotlucks.get(i));
-//            }
-//        }
-//        return filteredPotlucks;
-//    }
+    @Override
+    public List<Potluck> getPotlucksByCreator(int creatorId) {
+        List<Potluck> filteredPotlucks = this.potluckRepo.findPotluckByCreator(creatorId);
+
+        return filteredPotlucks;
+    }
 
     @Override
     public Potluck getPotluckById(int id) {
