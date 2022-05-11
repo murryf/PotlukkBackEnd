@@ -1,4 +1,4 @@
-package dev.nexus.Repos;
+package dev.nexus.repos;
 
 import dev.nexus.entities.Potluck;
 

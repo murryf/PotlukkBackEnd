@@ -1,7 +1,7 @@
 package dev.nexus.services;
 
-import dev.nexus.Repos.PotluckRepo;
 import dev.nexus.entities.Potluck;
+import dev.nexus.repos.PotluckRepo;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Component;
 import org.springframework.stereotype.Service;
@@ -12,7 +12,7 @@ import java.util.Optional;
 
 @Component
 @Service
-public class PotluckServiceImpl implements dev.nexus.Services.PotluckService {
+public class PotluckServiceImpl implements dev.nexus.services.PotluckService {
 
     @Autowired
     private PotluckRepo potluckRepo;

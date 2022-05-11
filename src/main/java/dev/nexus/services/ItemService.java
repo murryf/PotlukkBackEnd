@@ -1,4 +1,4 @@
-package dev.nexus.Services;
+package dev.nexus.services;
 
 import dev.nexus.entities.Item;
 
