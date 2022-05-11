@@ -9,14 +9,14 @@ import javax.persistence.*;
 @Table(name = "potlucks")
 @NoArgsConstructor
 @AllArgsConstructor
-@ToString
 @Getter
 @Setter
+@ToString
 public class Potluck {
 
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
-    @Column(name = "id")
+    @Column(name = "potluck_id")
     private int id;
 
     @Column(name = "potluck_name")
@@ -26,8 +26,9 @@ public class Potluck {
     private double potluckDate;
 
     @Column(name = "creator_id")
-    private int  creator;
+    private int creator;
 
-
-
+    public void setPotluckDate(double potluckDate) {
+        this.potluckDate = potluckDate;
+    }
 }
