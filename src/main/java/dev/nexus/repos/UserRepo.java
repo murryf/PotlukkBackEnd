@@ -7,10 +7,8 @@ import org.springframework.stereotype.Repository;
 
 import java.util.List;
 
-/**
- * @Component marks class as a Bean -> ComponentScan adds Bean to Application Context
- * @Repository marks classes, which directly access Database
- */
+// @Component marks class as a Bean -> ComponentScan adds Bean to Application Context
+// @Repository marks classes, which directly access Database
 @Component
 @Repository
 public interface UserRepo extends JpaRepository<User, Integer>{
