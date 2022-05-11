@@ -62,6 +62,6 @@ public class PotluckRepoTests {
     @Test
     @Order(5)
     public void deletePotluck(){
-        this.potluckRepo.deleteById(3);
+        this.potluckRepo.deleteById(5);
     }
 }
