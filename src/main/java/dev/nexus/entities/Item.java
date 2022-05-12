@@ -15,7 +15,7 @@ public class Item {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     @Column(name = "id")
-    private Long id;
+    private int id;
 
     @Column(name = "item_name")
     private String name;
@@ -26,13 +26,13 @@ public class Item {
     @Column(name="supplier")
     private String supplier;
     @Column(name="potluck_id")
-    private Long potluckID;
+    private int potluckID;
 
-    public Long getId() {
+    public int getId() {
         return id;
     }
 
-    public void setId(Long id) {
+    public void setId(int id) {
         this.id = id;
     }
 
@@ -68,11 +68,11 @@ public class Item {
         this.supplier = supplier;
     }
 
-    public Long getPotluckID() {
+    public int getPotluckID() {
         return potluckID;
     }
 
-    public void setPotluckID(Long potluckID) {
+    public void setPotluckID(int potluckID) {
         this.potluckID = potluckID;
     }
 
