@@ -3,6 +3,7 @@ package dev.nexus.controllers;
 import dev.nexus.entities.Potluck;
 import dev.nexus.services.PotluckService;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.data.jpa.repository.Query;
 import org.springframework.stereotype.Component;
 import org.springframework.web.bind.annotation.*;
 
@@ -41,6 +42,13 @@ public class PotluckController {
     @ResponseBody
     public Potluck createNewPotluck(@RequestBody Potluck potluck){
         return this.potluckService.createPotluck(potluck);
+    }
+
+    @PatchMapping("/potlucks/{id}/{date}")
+    @ResponseBody
+    public Potluck createNewPotluck(@PathVariable int id, String date ){
+
+        return this.potluckService.updatePotluckDate(id, date);
     }
 
     @DeleteMapping("/potlucks/{id}")

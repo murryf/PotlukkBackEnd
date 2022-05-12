@@ -47,11 +47,16 @@ public class PotluckServiceImpl implements PotluckService {
     }
 
     @Override
-    public Potluck updatePotluckDate(int id, double date) {
-        Potluck potluck = this.potluckRepo.getById(id);
-        potluck.setPotluckDate(date);
-        this.potluckRepo.save(potluck);
-        return potluck;
+    public Potluck updatePotluckDate(int id, String date) {
+        Optional<Potluck> possiblePotluck = this.potluckRepo.findById(id);
+        if (possiblePotluck.isPresent()) {
+            Potluck potluck = possiblePotluck.get();
+            potluck.setPotluckDate(date);
+            this.potluckRepo.save(potluck);
+            return potluck;
+        } else {
+            throw new RuntimeException("No potluck found for the id: " + id);
+        }
     }
 
     @Override

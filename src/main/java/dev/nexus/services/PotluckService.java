@@ -12,7 +12,7 @@ public interface PotluckService {
     List<Potluck> getPotlucksByCreator(int creatorId);
     Potluck getPotluckById(int id);
 
-    Potluck updatePotluckDate(int id, double date);
+    Potluck updatePotluckDate(int id, String date);
     boolean deletePotluckById(int id);
 
 }
