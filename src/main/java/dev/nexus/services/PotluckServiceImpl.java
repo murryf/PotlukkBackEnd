@@ -65,4 +65,12 @@ public class PotluckServiceImpl implements PotluckService {
       this.potluckRepo.deleteById(id);
       return true;
     }
+
+    @Override
+    public boolean deletePotluckByCreator(int id) {
+        List<Potluck> potlucks = this.potluckRepo.findAll();
+        potlucks.removeIf(potluck -> potluck.getId() != id);
+        this.potluckRepo.deleteAllInBatch(potlucks);
+        return false;
+    }
 }
