@@ -41,13 +41,14 @@ public class PotluckController {
     @PostMapping("/potlucks")
     @ResponseBody
     public Potluck createNewPotluck(@RequestBody Potluck potluck){
+        potluck.setId(0);
         return this.potluckService.createPotluck(potluck);
     }
 
-    @PatchMapping("/potlucks/{id}/{date}")
+    @PatchMapping("/potlucks/{id}")
+    @Query
     @ResponseBody
-    public Potluck createNewPotluck(@PathVariable int id, String date ){
-
+    public Potluck updatePotluckTime(@PathVariable int id, @RequestParam String date ){
         return this.potluckService.updatePotluckDate(id, date);
     }
 
