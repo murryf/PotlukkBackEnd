@@ -21,6 +21,7 @@ public class PotluckServiceImpl implements PotluckService {
 
     @Override
     public Potluck createPotluck(Potluck potluck) {
+        potluck.setId(0);
         return this.potluckRepo.save(potluck);
     }
 

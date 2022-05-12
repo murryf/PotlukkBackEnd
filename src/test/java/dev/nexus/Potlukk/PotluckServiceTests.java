@@ -22,7 +22,7 @@ public class PotluckServiceTests {
 
     @Test
     public void createPotluck(){
-        Potluck potluck = this.potluckService.createPotluck(new Potluck(0,"Fouth", "Please Set Date", 1));
+        Potluck potluck = this.potluckService.createPotluck(new Potluck(0,"Fourth", "Please Set Date", 1));
         System.out.println(potluck);
     }
 
