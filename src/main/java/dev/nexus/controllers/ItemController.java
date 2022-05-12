@@ -1,11 +1,13 @@
 package dev.nexus.controllers;
 
+import dev.nexus.entities.Item;
 import dev.nexus.services.ItemService;
-import dev.nexus.services.ItemServicesImpl;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Component;
 import org.springframework.stereotype.Controller;
-import org.springframework.web.bind.annotation.CrossOrigin;
+import org.springframework.web.bind.annotation.*;
+
+import java.util.List;
 
 
 @Component // identifies classes for Spring
