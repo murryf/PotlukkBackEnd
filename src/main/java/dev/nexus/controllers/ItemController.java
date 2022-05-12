@@ -7,13 +7,18 @@ import org.springframework.stereotype.Component;
 import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.CrossOrigin;
 
+// @Component: Spring detects classes with this notation.
 @Component
+// @Controller: Spring identifies controller class with this notation.
 @Controller
+// @CrossOrigin: This annotation tells Spring to enable CORS
 @CrossOrigin("*")
-public class ItemController {
+public class ItemController{
+    public ItemService itemService;
 
-    //@Autowired
-    //private final ItemService itemService = new ItemServicesImpl();
+    public List<Item> retrieveAllItems(){
 
+    }
 
+    public Item
 }
