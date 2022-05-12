@@ -12,5 +12,5 @@ import java.util.List;
 @Component
 @Repository
 public interface UserRepo extends JpaRepository<User, Integer>{
-	List<User> getUserById(int id);
+//	List<User> getUserById(int id);
 }
