@@ -7,18 +7,47 @@ import org.springframework.stereotype.Component;
 import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.CrossOrigin;
 
-// @Component: Spring detects classes with this notation.
-@Component
-// @Controller: Spring identifies controller class with this notation.
-@Controller
-// @CrossOrigin: This annotation tells Spring to enable CORS
-@CrossOrigin("*")
+
+@Component // identifies classes for Spring
+@Controller // identifies Controller classes for Spring
+@CrossOrigin("*") // tells Spring to enable CORS
 public class ItemController{
+    /* Declare Service Object */
+    @Autowired // lets Spring resolve & inject bean dependencies
     public ItemService itemService;
 
-    public List<Item> retrieveAllItems(){
+    // CRUD:
 
+    /* CREATE:POST item */
+    @PostMapping("/items") // RequestMethod.POST shortcut
+    @ResponseBody
+    public Item registerNewItem(@RequestBody Item item){
+        return this.itemService.registerItem(item);
     }
 
-    public Item
+    /* READ:GET all items */
+    @GetMapping("/items") // RequestMethod.GET shortcut
+    @ResponseBody
+    public List<Item> retrieveAllItems(){
+        List<Item> items = this.itemService.getAllItems();
+        return items;
+    }
+
+    /* READ:GET item by id */
+    @GetMapping("/items/{id}")
+    @ResponseBody
+    public Item getItem(@PathVariable Integer id){
+        Item item = this.itemService.getItemById(id);
+        return item;
+    }
+
+    /* UPDATE:PUT item */
+    // n/a
+
+    /* DELETE:DELETE item */
+    @DeleteMapping("/items/{id}") // RequestMethod.DELETE shortcut
+    public boolean deleteItem(@PathVariable Integer id){
+        this.itemService.deleteItem(id);
+        return true;
+    }
 }
