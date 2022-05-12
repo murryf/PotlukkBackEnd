@@ -45,10 +45,10 @@ public class PotluckController {
         return this.potluckService.createPotluck(potluck);
     }
 
-    @PatchMapping("/potlucks/{id}/{date}")
+    @PatchMapping("/potlucks/{id}")
+    @Query
     @ResponseBody
-    public Potluck updatePotluckTime(@PathVariable int id, String date ){
-
+    public Potluck updatePotluckTime(@PathVariable int id, @RequestParam String date ){
         return this.potluckService.updatePotluckDate(id, date);
     }
 
