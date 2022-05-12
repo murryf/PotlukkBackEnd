@@ -23,7 +23,7 @@ public class Potluck {
     private String potluckName;
 
     @Column(name = "potluck_date")
-    private double potluckDate;
+    private String potluckDate;
 
     @Column(name = "creator_id")
     private int creator;
