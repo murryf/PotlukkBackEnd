@@ -6,7 +6,6 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Component;
 import org.springframework.stereotype.Service;
 
-import java.util.ArrayList;
 import java.util.List;
 import java.util.Optional;
 
@@ -47,11 +46,15 @@ public class PotluckServiceImpl implements dev.nexus.services.PotluckService {
     }
 
     @Override
-    public Potluck updatePotluckTime(int id, double date) {
-        Potluck potluck = this.potluckRepo.getById(id);
-        potluck.setPotluckDate(date);
-        this.potluckRepo.save(potluck);
-        return potluck;
+    public Potluck updatePotluckTime(int id, String date) {
+        Optional<Potluck> possiblePotluck = this.potluckRepo.findById(id);
+        if(possiblePotluck.isPresent()){
+            Potluck potluck = possiblePotluck.get();
+            potluck.setPotluckDate(date);
+            return potluck;
+        }else{
+            throw new RuntimeException("No such potluck found.");
+        }
     }
 
     @Override

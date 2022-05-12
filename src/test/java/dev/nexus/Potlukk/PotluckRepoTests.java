@@ -1,8 +1,8 @@
 package dev.nexus.Potlukk;
 
 
-import dev.nexus.repos.PotluckRepo;
 import dev.nexus.entities.Potluck;
+import dev.nexus.repos.PotluckRepo;
 import org.junit.jupiter.api.Assertions;
 import org.junit.jupiter.api.MethodOrderer;
 import org.junit.jupiter.api.Test;
@@ -10,6 +10,9 @@ import org.junit.jupiter.api.TestMethodOrder;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.boot.test.context.SpringBootTest;
 import org.springframework.core.annotation.Order;
+
+
+import java.time.LocalDateTime;
 
 import java.util.List;
 import java.util.Optional;
@@ -26,7 +29,7 @@ public class PotluckRepoTests {
     @Test
     @Order(1)
     public void createPotluck(){
-        Potluck potluck = new Potluck(0, "First Potluck", 24000, 1);
+        Potluck potluck = new Potluck(0, "First Potluck", "December 30", 1);
         potluckRepo.save(potluck);
         testPotluck = potluck;
         System.out.println(potluck);
@@ -58,10 +61,23 @@ public class PotluckRepoTests {
         System.out.println(potluckList);
     }
 
+    @Test
+    @Order(5)
+    public void updatePotluckDate(){
+        Optional<Potluck> possiblePotluck = this.potluckRepo.findById(1);
+        if(possiblePotluck.isPresent()){
+            Potluck potluck = possiblePotluck.get();
+           potluck.setPotluckDate("Undetermined Date");
+            System.out.println(potluck);
+        }else{
+            System.out.println("No such potluck found.");
+        }
+    }
+
 
     @Test
     @Order(5)
     public void deletePotluck(){
-        this.potluckRepo.deleteById(5);
+        this.potluckRepo.deleteById(3);
     }
 }

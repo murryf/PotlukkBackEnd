@@ -12,7 +12,7 @@ import javax.persistence.*;
 @Getter
 @Setter
 @ToString
-public class Potluck {
+public class Potluck{
 
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
@@ -23,12 +23,10 @@ public class Potluck {
     private String potluckName;
 
     @Column(name = "potluck_date")
-    private double potluckDate;
+    private String potluckDate;
 
     @Column(name = "creator_id")
     private int creator;
 
-    public void setPotluckDate(double potluckDate) {
-        this.potluckDate = potluckDate;
-    }
+
 }
