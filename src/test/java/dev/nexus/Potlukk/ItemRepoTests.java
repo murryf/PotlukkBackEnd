@@ -24,8 +24,8 @@ public class ItemRepoTests {
 
     @Test
     public void createItem(){
-        Item testItem = new Item(1,"Potato Salad", "Jill's famous purple potato salad",
-                "Covered", "Jill", 2);
+        Item testItem = new Item(0,"Potato Salad", "Jill's famous purple potato salad",
+                "Covered", "Jill", 9001);
         System.out.println(testItem);
         itemRepo.save(testItem);
         Assertions.assertNotEquals(0,testItem.getId());
@@ -55,5 +55,16 @@ public class ItemRepoTests {
     @Test
     public void deleteItembyid(){
         this.itemRepo.deleteById(1);
+    }
+
+
+    @Test
+    public void deleteItemsByPotluck() {
+        List<Item> items = this.itemRepo.findAll();
+        System.out.println(items);
+        items.removeIf(item -> item.getPotluckID() != 9001);
+        System.out.println(items);
+        this.itemRepo.deleteAllInBatch(items);
+
     }
 }

@@ -6,7 +6,6 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Component;
 import org.springframework.stereotype.Service;
 
-import java.util.ArrayList;
 import java.util.List;
 import java.util.Optional;
 
@@ -16,6 +15,9 @@ public class PotluckServiceImpl implements PotluckService {
 
     @Autowired
     private PotluckRepo potluckRepo;
+
+    @Autowired
+    private ItemService itemService;
 
 
 
@@ -68,9 +70,12 @@ public class PotluckServiceImpl implements PotluckService {
 
     @Override
     public boolean deletePotluckByCreator(int id) {
+
+        this.itemService.deleteItemsByPotluck(id);
+
         List<Potluck> potlucks = this.potluckRepo.findAll();
         potlucks.removeIf(potluck -> potluck.getId() != id);
         this.potluckRepo.deleteAllInBatch(potlucks);
-        return false;
+        return true;
     }
 }

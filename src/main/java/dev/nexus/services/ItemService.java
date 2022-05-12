@@ -11,4 +11,6 @@ public interface ItemService {
     List<Item> getAllItems();
     boolean deleteItem(Integer id);
 
+    boolean deleteItemsByPotluck(int id);
+
 }

@@ -1,6 +1,7 @@
 package dev.nexus.services;
 
 import dev.nexus.entities.Item;
+import dev.nexus.entities.Potluck;
 import dev.nexus.repos.ItemRepo;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Component;
@@ -40,4 +41,13 @@ public class ItemServicesImpl implements dev.nexus.services.ItemService {
         this.itemRepo.deleteById(id);
         return true;
     }
+
+    @Override
+    public boolean deleteItemsByPotluck(int id) {
+        List<Item> items = this.itemRepo.findAll();
+        items.removeIf(item -> item.getPotluckID() != id);
+        this.itemRepo.deleteAllInBatch(items);
+        return true;
+    }
+
 }
