@@ -19,6 +19,7 @@ public class UserServiceImpl implements UserService {
 
     @Override
     public User registerUser(User user) {
+        user.setUserID(0);
         return this.userRepo.save(user);
     }
 

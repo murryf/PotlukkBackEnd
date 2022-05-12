@@ -21,6 +21,7 @@ public class UserController {
     @PostMapping("/users")
     @ResponseBody
     public User createNewUser(@RequestBody User user){
+        user.setUserID(0);
         return this.userService.registerUser(user);
     }
 
