@@ -1,6 +1,7 @@
 package dev.nexus.Potlukk;
 
 
+
 import dev.nexus.repos.PotluckRepo;
 import dev.nexus.entities.Potluck;
 import org.junit.jupiter.api.Assertions;
@@ -77,7 +78,16 @@ public class PotluckRepoTests {
     @Test
     @Order(6)
     public void deletePotluck(){
-        this.potluckRepo.deleteById(4);
+        this.potluckRepo.deleteById(2);
+    }
+
+    @Test
+    @Order(6)
+    public void deleteAllPotlucks(){
+        List<Potluck> potlucks = this.potluckRepo.findAll();
+        potlucks.removeIf(potluck -> potluck.getId() != 5);
+        this.potluckRepo.deleteAllInBatch(potlucks);
+
     }
 
 }

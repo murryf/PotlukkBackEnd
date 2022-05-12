@@ -15,4 +15,6 @@ public interface PotluckService {
     Potluck updatePotluckDate(int id, String date);
     boolean deletePotluckById(int id);
 
+    boolean deletePotluckByCreator(int id);
+
 }
