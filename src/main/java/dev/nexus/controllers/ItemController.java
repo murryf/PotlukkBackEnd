@@ -46,6 +46,7 @@ public class ItemController{
 
     /* DELETE:DELETE item */
     @DeleteMapping("/items/{id}") // RequestMethod.DELETE shortcut
+    @ResponseBody
     public boolean deleteItem(@PathVariable Integer id){
         this.itemService.deleteItem(id);
         return true;
