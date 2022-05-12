@@ -1,7 +1,7 @@
 package dev.nexus.controllers;
 
 
-import dev.nexus.entities.User;
+import dev.nexus.entities.*;
 import dev.nexus.services.UserService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Component;

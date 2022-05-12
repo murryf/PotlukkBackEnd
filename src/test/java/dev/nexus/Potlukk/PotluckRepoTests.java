@@ -2,8 +2,10 @@ package dev.nexus.Potlukk;
 
 
 
+import dev.nexus.repos.ItemRepo;
 import dev.nexus.repos.PotluckRepo;
 import dev.nexus.entities.Potluck;
+import dev.nexus.services.ItemService;
 import org.junit.jupiter.api.Assertions;
 import org.junit.jupiter.api.MethodOrderer;
 import org.junit.jupiter.api.Test;
@@ -23,11 +25,15 @@ public class PotluckRepoTests {
 
     @Autowired
     private PotluckRepo potluckRepo;
+    @Autowired
+    private ItemRepo itemRepo;
+    @Autowired
+    private ItemService itemService;
 
     @Test
     @Order(1)
     public void createPotluck(){
-        Potluck potluck = new Potluck(0, "First Potluck", "Not Ready Yet", 1);
+        Potluck potluck = new Potluck(0, "First Potluck", "Not Ready Yet", 2);
         potluckRepo.save(potluck);
         testPotluck = potluck;
         System.out.println(potluck);
@@ -84,8 +90,12 @@ public class PotluckRepoTests {
     @Test
     @Order(6)
     public void deleteAllPotlucks(){
+        int potluckID = 9001;
+
+        this.itemService.deleteItemsByPotluck(potluckID);
+
         List<Potluck> potlucks = this.potluckRepo.findAll();
-        potlucks.removeIf(potluck -> potluck.getId() != 5);
+        potlucks.removeIf(potluck -> potluck.getId() != potluckID);
         this.potluckRepo.deleteAllInBatch(potlucks);
 
     }
