@@ -9,12 +9,14 @@
         <outputRelativeToContentRoot value="true" />
         <module name="SuggestionBoxSpring" />
         <module name="Potluckk" />
+        <module name="PotlukkBackEnd" />
       </profile>
     </annotationProcessing>
   </component>
   <component name="JavacSettings">
     <option name="ADDITIONAL_OPTIONS_OVERRIDE">
       <module name="Potluckk" options="-parameters" />
+      <module name="PotlukkBackEnd" options="-parameters" />
       <module name="SuggestionBoxSpring" options="-parameters" />
     </option>
   </component>
