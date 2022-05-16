@@ -1,7 +1,10 @@
 package dev.nexus.controllers;
 
 
+import dev.nexus.dtos.LoginInfo;
+import dev.nexus.dtos.UserInfo;
 import dev.nexus.entities.*;
+import dev.nexus.services.LoginService;
 import dev.nexus.services.UserService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Component;
@@ -17,12 +20,23 @@ public class UserController {
     @Autowired
     public UserService userService;
 
+    @Autowired
+    LoginService loginService;
+
 
     @PostMapping("/users")
     @ResponseBody
     public User createNewUser(@RequestBody User user){
         user.setUserID(0);
         return this.userService.registerUser(user);
+    }
+
+
+    @PostMapping("/login")
+    public UserInfo login(@RequestBody LoginInfo loginInfo){
+        User user = loginService.login(loginInfo.getUserName(), loginInfo.getPassword());
+        UserInfo userInfo = new UserInfo(user.getUserID(), user.getUserName());
+        return userInfo;
     }
 
 
